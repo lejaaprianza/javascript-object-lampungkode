@@ -1,17 +1,28 @@
-// const daerah = {
-//   namaProvinsi: "Lampung",
-//   namaKota: "Bandar Lampung",
-//   angka: 50,
-//   isi: null,
-//   nodefined: undefined,
-// }
+const daerah = {
+  namaProvinsi: "Lampung",
+  namaKota: "Bandar Lampung",
+  alamat: "rahasia",
+  nomor: 50,
+}
 
-// console.log(daerah.namaProvinsi)
-// console.log(daerah["namaProvinsi"])
+//ini contoh sederhana
 
-// let txt = ""
+let txt1 = ""
+for (let x in daerah) {
+  txt1 += daerah[x] + " "
+}
+console.log("Alamat pertama: " + txt1)
 
-// for (let x in daerah) {
-//   txt += daerah[x] + " "
-// }
-// console.log(txt)
+//ini contoh kompleks
+
+let txt2 = ""
+let i = 0
+for (let x in daerah) {
+  i++
+  if (i < Object.keys(daerah).length) {
+    txt2 += daerah[x] + ", "
+  } else {
+    txt2 += "No " + daerah[x]
+  }
+}
+console.log("Alamat kedua: " + txt2)
