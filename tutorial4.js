@@ -1,19 +1,45 @@
-let x = ""
-const myObj = {
-  name: "John",
-  age: 30,
-  cars: [
-    { name: "Ford", models: ["Fiesta", "Focus", "Mustang"] },
-    { name: "BMW", models: ["320", "X3", "X5"] },
-    { name: "Fiat", models: ["500", "Panda"] },
-  ],
+const daerah = {
+  Indonesia: {
+    Jakarta: {
+      daerah1: "Jakarta Barat",
+      daerah2: "Jakarta Timur",
+      daerah3: "Jakarta Utara",
+    },
+    Lampung: {
+      daerah1: "Kabupaten Lampung Baret",
+      daerah1: "Kabupaten Lampung Barat",
+      daerah1: "Kabupaten Lampung Barat",
+      daerah1: "Kabupaten Lampung Barat",
+      daerah1: "Kabupaten Lampung Barat",
+      daerah1: "Kabupaten Lampung Barat",
+      daerah2: "Kabupaten Tanggamus",
+      daerah3: {
+        BandarLampung: {
+          kecamatan1: "Way Halim",
+          kecamatan2: "Teluk Betung Utara",
+          kecamatan3: "Panjang",
+        },
+      },
+    },
+  },
 }
 
-for (let i in myObj.cars) {
-  x += myObj.cars[i].name + "\n"
-  for (let j in myObj.cars[i].models) {
-    x += myObj.cars[i].models[j] + "\n"
-  }
-}
+// jadi array
+console.log(Object.keys(daerah))
+//ini jumlahnya
+console.log(Object.keys(daerah).length)
 
-console.log(x)
+console.log(Object.keys(daerah.Indonesia))
+console.log(Object.keys(daerah.Indonesia).length)
+
+console.log(Object.keys(daerah.Indonesia.Jakarta))
+console.log(Object.keys(daerah.Indonesia.Jakarta).length)
+
+console.log(Object.keys(daerah.Indonesia.Lampung))
+console.log(Object.keys(daerah.Indonesia.Lampung).length)
+
+console.log(Object.keys(daerah.Indonesia.Lampung.daerah3))
+console.log(Object.keys(daerah.Indonesia.Lampung.daerah3).length)
+
+console.log(Object.keys(daerah.Indonesia.Lampung.daerah3.BandarLampung))
+console.log(Object.keys(daerah.Indonesia.Lampung.daerah3.BandarLampung).length)
