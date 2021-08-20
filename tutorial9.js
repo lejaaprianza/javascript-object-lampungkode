@@ -1,42 +1,62 @@
-const rows = [
-  {
-    username: "Andi",
-    age: 20,
+const contoh = {
+  angka: 1,
+  huruf: "A",
+  gabungan: function () {
+    return this.huruf + " " + this.angka
   },
-  {
-    username: "Agus",
-    age: 20,
-  },
-  {
-    username: "Bagus",
-    age: 20,
-  },
-  {
-    username: "Bobi",
-    age: 20,
-  },
-  {
-    username: "Rian",
-    age: 20,
-  },
-]
-
-const testingData = {
-  data1: "tes1",
-  data2: { nestData: {} },
-  data3: "tes3",
-  data4: "tes4",
-  data5: "tes5",
 }
 
-const hasil = []
-for (i in testingData) {
-  hasil.push({ [i]: testingData[i] })
-}
-console.log(hasil)
+console.log(contoh.gabungan())
+console.log(contoh.gabungan)
 
-for (i in rows) {
-  Object.assign(rows[i], hasil[i])
+//cara 1
+function cobaDaerah(daerah3) {
+  return (
+    this.daerahSatu +
+    " dan " +
+    this.daerahDua +
+    (daerah3 != undefined ? " dan " + daerah3 : "")
+  )
 }
 
-console.log(rows)
+const daerah = {
+  daerahSatu: "Lampung",
+  daerahDua: "Jawa Barat",
+  //cara 1
+  provinsi: cobaDaerah,
+  //cara 2
+  provinsi2: function (daerah3) {
+    return (
+      this.daerahSatu +
+      " dan " +
+      this.daerahDua +
+      (daerah3 != undefined ? " dan " + daerah3 : "")
+    )
+  },
+}
+
+//cara 1
+console.log("\nCara Satu")
+console.log(daerah.provinsi())
+console.log(daerah.provinsi("Bali"))
+
+//cara 2
+console.log("\nCara Dua")
+console.log(daerah.provinsi2())
+console.log(daerah.provinsi2("Nusa Tenggara Timur"))
+
+//cara 3
+daerah.provinsi3 = function () {
+  return this.daerahSatu + " dan " + this.daerahDua
+}
+
+//cara 3
+console.log("\nCara Tiga")
+console.log(daerah.provinsi3())
+console.log(daerah.provinsi3("Nusa Tenggara Timur"))
+
+//saat di console.log tanpa tanda kurung ()
+console.log("\nbila di console.log tanpa tanda kurung")
+console.log(daerah.provinsi)
+console.log(daerah.provinsi2)
+console.log(daerah.provinsi3)
