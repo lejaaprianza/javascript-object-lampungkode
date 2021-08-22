@@ -7,5 +7,5 @@ const contoh = {
   },
 }
 
-// contoh.sentence = "Biodata: "
+contoh.sentence = "Biodata: "
 console.log(contoh.kalimat)
